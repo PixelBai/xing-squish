@@ -58,10 +58,10 @@ export function DropZone({ onFilesDrop }: DropZoneProps) {
         <Upload className="w-12 h-12 text-gray-400" />
         <div>
           <p className="text-lg font-medium text-gray-700">
-            Drop images here or click to upload
+            将图片拖入区域，或点击导入
           </p>
           <p className="text-sm text-gray-500">
-            Supports JPEG, PNG, WebP, AVIF, and JXL
+            支持 JPEG, PNG, WebP, AVIF, 或 JXL
           </p>
         </div>
       </label>

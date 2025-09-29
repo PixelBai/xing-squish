@@ -52,24 +52,24 @@ export function ImageList({ images, onRemove }: ImageListProps) {
             </div>
             <div className="mt-1 flex items-center gap-2 text-sm text-gray-500">
               {image.status === 'pending' && (
-                <span>Ready to process</span>
+                <span>准备中</span>
               )}
               {image.status === 'processing' && (
                 <span className="flex items-center gap-2">
                   <Loader2 className="w-4 h-4 animate-spin" />
-                  Processing...
+                  处理中...
                 </span>
               )}
               {image.status === 'complete' && (
                 <span className="flex items-center gap-2 text-green-600">
                   <CheckCircle className="w-4 h-4" />
-                  Complete
+                  完成
                 </span>
               )}
               {image.status === 'error' && (
                 <span className="flex items-center gap-2 text-red-600">
                   <AlertCircle className="w-4 h-4" />
-                  {image.error || 'Error processing image'}
+                  {image.error || '处理失败'}
                 </span>
               )}
             </div>
@@ -80,13 +80,13 @@ export function ImageList({ images, onRemove }: ImageListProps) {
                   {' → '}
                   {formatFileSize(image.compressedSize)}{' '}
                   <span className="text-green-600">
-                    (
+                    (减小
                     {Math.round(
                       ((image.originalSize - image.compressedSize) /
                         image.originalSize) *
                         100
                     )}
-                    % smaller)
+                    %)
                   </span>
                 </>
               )}
